@@ -8,16 +8,19 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #ccc;
-	background: none;
+	color: #eee;
+	opacity: 0.99;
+	background: #222629;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
+	font-size: 0.8em;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
 	line-height: 1.5;
+	border-radius: 0.7em;
+	border-color: #222629;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -32,19 +35,19 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	padding: 0.5em;
 	margin: .5em 0;
 	overflow: auto;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #2d2d2d;
+	background: #222629;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
+	padding: .5em;
 	border-radius: .3em;
 	white-space: normal;
 }
@@ -75,14 +78,14 @@ pre[class*="language-"] {
 .token.boolean,
 .token.number,
 .token.function {
-	color: #f08d49;
+	color: #4382C1FF;
 }
 
 .token.property,
 .token.class-name,
 .token.constant,
 .token.symbol {
-	color: #f8c555;
+	color: #41BFA0FF;
 }
 
 .token.selector,
@@ -98,7 +101,7 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.regex,
 .token.variable {
-	color: #7ec699;
+	color: #CB8A72FF;
 }
 
 .token.operator,

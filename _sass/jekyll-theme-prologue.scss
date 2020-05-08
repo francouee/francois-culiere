@@ -17,7 +17,7 @@
 	@include skel-breakpoints((
 		wide: '(min-width: 961px) and (max-width: 1880px)',
 		normal: '(min-width: 961px) and (max-width: 1620px)',
-		narrow: '(min-width: 961px) and (max-width: 1320px)',
+		narrow: '(min-width: 961px) and (max-width: 1120px)',
 		narrower: '(max-width: 960px)',
 		mobile: '(max-width: 736px)'
 	));
@@ -303,7 +303,7 @@
 			margin: 0 0 2em 0;
 			margin-left: auto;
  			margin-right: auto;
-  			width: 50%;
+  			width: 40%;
 		}
 	}
 
@@ -408,37 +408,50 @@
 /* Table */
 
 	table {
-		width: 100%;
-		text-align: left;
+		text-align: center;
+		overflow:hidden;
+		border-collapse: collapse;
+		margin: 25px auto;
+		font-size: 0.9em;
+		border-radius: 5px 5px 0 0;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
-		tbody {
-			tr {
-				&:nth-child(2n+2) {
-					background: #f4f4f4;
-				}
-			}
+		&.block{
+			display: block;
+			box-shadow: unset;
 		}
 
-		td {
-			padding: 0.5em 1em 0.5em 1em;
-		}
-
-		th {
-			text-align: left;
-			padding: 0.5em 1em 0.5em 1em;
-			color: #fff;
-			background: #222729 url('images/overlay.png');
-		}
-
-		thead {
-			background: #444;
-			color: #fff;
-		}
-
-		tfoot {
-			background: #eee;
-		}
 	}
+
+	table thead tr {
+		background-color: #4863A0;
+		color: #ffffff;
+		text-align: left;
+		font-weight: bold;
+	}
+
+	table th,
+	table td {
+		padding: 12px 15px;
+	}
+
+	table tbody tr {
+		border-bottom: 1px solid #dddddd;
+	}
+
+	table tbody tr:nth-of-type(even) {
+		background-color: #f3f3f3;
+	}
+
+	table tbody tr:last-of-type {
+		border-bottom: 2px solid #4863A0;
+	}
+
+	table tbody tr.active-row {
+		font-weight: bold;
+		color: #4863A0;
+	}
+
 
 /* Button */
 

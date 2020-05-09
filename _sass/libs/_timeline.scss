@@ -57,10 +57,9 @@
 }
 
 /* line */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 961px) {
     #cd-timeline.cd-offset {
-        margin-left: -50px;
-        min-height: 500px;
+        margin-left: -20px;
     }
 
     #cd-timeline.cd-offset::before {
@@ -68,23 +67,7 @@
     }
 }
 
-@media only screen and (min-width: 1350px) and (max-width: 1550px){
-    #cd-timeline.cd-offset {
-        margin-left: -90px;
-        min-height: 500px;
-    }
 
-    #cd-timeline.cd-offset::before {
-        left: 150px;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    #cd-timeline.cd-center::before, .cd-timeline-dot::before {
-        left: 50%;
-        margin-left: -2px;
-    }
-}
 
 /* CONTROLS */
 #timeline-controls li span, #timeline-controls .show-all {
@@ -102,7 +85,7 @@
     margin-right: 18px;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 961px) {
     /*#timeline-controls { position: fixed; top: 0px; width: 175px; padding-top: 80px; height: 100%; overflow-y: overlay; }*/
     #timeline-controls ul li {
         float: none;
@@ -159,7 +142,7 @@
     animation: cd-leave-content 0.4s;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1220px) {
     .cd-center .cd-timeline-block {
         margin: 0 0 4em;
     }
@@ -184,13 +167,13 @@
     font-size: 22px;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 961px) {
     .cd-offset .cd-timeline-img {
         left: 130px;
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1220px) {
     .cd-center .cd-timeline-img {
         width: 60px;
         height: 60px;
@@ -390,7 +373,7 @@
     border-right: 7px solid white;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 961px) {
     .cd-timeline-content .cd-tags span {
         font-size: 16px;
         line-height: inherit;
@@ -399,7 +382,7 @@
 }
 
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 961px) {
     .cd-timeline-content .cd-tags span {
         font-size: 16px;
         line-height: inherit;
@@ -438,7 +421,7 @@
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1220px) {
     .cd-center .cd-timeline-content {
         margin-left: 0;
         padding: 1.2em;

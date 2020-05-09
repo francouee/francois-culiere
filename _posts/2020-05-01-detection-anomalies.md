@@ -1,7 +1,7 @@
 ---
 title: Détection d'anomalie
 layout: post
-icon: fa-lightbulb
+icon: fa-bell
 icon-style: regular
 ---
 

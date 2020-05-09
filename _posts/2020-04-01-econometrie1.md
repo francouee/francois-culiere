@@ -1,12 +1,11 @@
 ---
-title: Econometrie, hétéroscédasticité
+title: Économétrie
 layout: post
 icon: fa-poll
 icon-style: solid
 ---
 
-<h1><center> Projet Econométrie: Sur l'hétéroscédasticité de la régression linéaire </center></h1>
-<h2><center> Partie 1: Régression </center></h2>
+<h1><center> Régression linéaire et hétéroscédasticité</center></h1>
 
 
 

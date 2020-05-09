@@ -5,7 +5,7 @@ icon: fa-bell
 icon-style: regular
 ---
 
-<h1 style='text-align: center;'>Challenge Large Scale Machine Learning</h1>
+<h1 style='text-align: center;'>Data Challenge Airbus sur la détection d'anomalie</h1>
 
 
 ## Les données
@@ -72,7 +72,7 @@ Le **critère** de performance à **optimiser** est l'aire sous la courbe ROC (*
 La difficulté majeure de la **detection d'anomalie fonctionnelle** est de trouver la **représentation des données** permettant de décrire le **mieux possible** le **comportement normal** du système. Le choix de la transformation peut être facilité par la **connaissance à priori** des **sources d'anomalies**. Dans le cas de la detection d'anomalie des roulements à bille par exemple, la déterioration des roulements va entrainer l'apparition de fréquences vibratoires absentes dans le cas d'un comportement normal. 
 
 Deux méthodes sont proposées pour detecter les anomalies:
-1. Une consiste à chercher les descripteurs les plus appropriés pour detecter les anomalies (feature engineering) puis d'appliquer des algorithmes de detection d'anomalie non supervisés (comme l'algorihtme d'Isolation Forest ou bien Local Outlier Factor. 
+1. Une consiste à chercher les descripteurs les plus appropriés pour detecter les anomalies (feature engineering) puis d'appliquer des algorithmes de detection d'anomalie non supervisés comme l'algorihtme d'Isolation Forest ou bien Local Outlier Factor. 
 2. L'autre  utilise des méthodes de **Deep Learning** pour apprendre la représentation des données en utilisant des autoencodeurs ou en cherchant un sous espace de volume minimum des données.
 
 ### Cadre de detection d'anomalie

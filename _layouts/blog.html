@@ -13,7 +13,7 @@ layout: default
 
 		{%- capture _title -%}
 			{%-  if _post.link -%}
-				<a href="{{- _post.link  -}}">{{- _post.title -}}</a>
+				<a href="{{- _post.link  -}}" target="_blank">{{- _post.title -}}</a>
 			{%- else -%}
 				<a href="{{- _post.url | absolute_url -}}">{{- _post.title -}}</a>
 			{%- endif -%}
@@ -28,7 +28,7 @@ layout: default
 
 		{%- capture _link -%}
 		{%-  if _post.link -%}
-				<a href="{{- _post.link  -}}">read more</a>
+				<a href="{{- _post.link  -}}" target="_blank">read more</a>
 		{%- else -%}
 			<a href="{{- _post.url | absolute_url -}}">read more</a>
 		{%- endif -%}

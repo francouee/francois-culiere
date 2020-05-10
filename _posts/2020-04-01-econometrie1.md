@@ -9,7 +9,7 @@ icon-style: solid
 
 
 
-Projet d'économétrie réalisé pendant mon année à Télécom Paris. Les données proviennent du jeu de données [Mroz](#https://www.rdocumentation.org/packages/npsf/versions/0.5.2/topics/mroz) contenant des informations sur la participation des femmes dans l'économie Américaine dans les années 2000. 
+Cette page présente un projet d'économétrie réalisé pendant mon année à Télécom Paris. Les données proviennent du jeu de données [Mroz](#https://www.rdocumentation.org/packages/npsf/versions/0.5.2/topics/mroz) contenant des informations sur la participation des femmes dans l'économie Américaine dans les années 2000. 
 
 Le but du projet est dans un premier temps de réaliser des **tests d'hypothèses** sur les coefficients de régression du salaire sur plusieurs varibles puis d'analyser les **sources d'hétéroscédasticité** du modèle afin de les corriger. La correction de l'hétéroscédasticité permet d'avoir des **estimateurs efficients** en **sphériscisant** la **matrice de covariance des bruits** ([théorème de Gauss Markov](#[https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Gauss-Markov](https://fr.wikipedia.org/wiki/Théorème_de_Gauss-Markov))) 
 
@@ -97,8 +97,7 @@ Le but du projet est dans un premier temps de réaliser des **tests d'hypothèse
 </table>
 
 
-
-### 1. Calculer les corrélations motheduc et fatheduc. Expliquer le problème de multi-collinéarité.
+### Calculer les corrélations motheduc et fatheduc. Expliquer le problème de multi-collinéarité
 
 
 
@@ -110,21 +109,21 @@ sns.heatmap(corr, annot=True, cmap=sns.color_palette("Blues"))
 plt.show()
 ```
 
-<img src='/assets/posts/Econometrie/Heteroscedasticite/output_17_0.png' class='image centered'>
+<img src='/assets/posts/Econometrie/heteroscedasticite/output_17_0.png' class='image centered'>
 
 Si la matrice de design $\mathbf{X}$ présente des colonnes colinéaires entre elles, 
 ceci peut entrainer des problèmes de conditionnement pour l'inversion de la matrice $\mathbf{X^TX}$. Le vrai ploblème cependant réside
 dans l'explosion de la **variance des estimateurs** des paramêtres de la regression: $ V(\theta) = \sigma (X^TX)^{-1} $
 
-### 2. Faites un graphique en nuage de point entre wage et educ. S'agit-il d'un effet "toute chose étant égale par ailleurs ?"
+### Faites un graphique en nuage de point entre wage et educ. S'agit-il d'un effet "toute chose étant égale par ailleurs ?"
 
-<img src='/assets/posts/Econometrie/Heteroscedasticite/output_20_0.png' class='image centered'>
+<img src='/assets/posts/Econometrie/heteroscedasticite/output_20_0.png' class='image centered'>
 
 On constate une **corrélation positive** entre le niveau d'éducation et le salaire. On ne peut cependant **pas dire facilement** comme souvent en économétrie que cet effet soit un effet **_"toute chose étant égale par ailleurs"_**. Il se pourrait par exemple que le **niveau d'éducation** **dépende majoritairement de la classe sociale** des individus. Ainsi, la **corrélation** que l'on constate ici ne serait en fait due qu'a la **classe sociale** et non au niveau d'éduction qui en dépend.
 
 
 
-### 3. Quelle est l'hypothèse fondamentale qui garantit des estimateurs non biaisés ? Expliquer le biais de variable omise
+### Quelle est l'hypothèse fondamentale qui garantit des estimateurs non biaisés ? Expliquer le biais de variable omise
 
 
 
@@ -157,7 +156,7 @@ Le **biais de variable omise** survient lorsqu'une des **variables explicatives 
 
 
 
-### 4. Faire la régression du log de wage en utilisant comme variables explicatives une constante,  city, educ, exper, nwifeinc, kidslt6, kidsgt6
+### Faire la régression du log de wage en utilisant comme variables explicatives une constante,  city, educ, exper, nwifeinc, kidslt6, kidsgt6
 
 
 
@@ -190,8 +189,7 @@ plt.show()
 
 
 
-<img src='/assets/posts/Econometrie/Heteroscedasticite/output_25_1.png' class='image centered'>
-
+<img src='/assets/posts/Econometrie/heteroscedasticite/output_25_1.png' class='image centered'>
 
 **Nous rappelons ici le théorème de cochran qui montre que sous l'hypothèse de bruit Gaussien, les coefficients de la régression 
 linéaire suivent une  loi de student:**
@@ -206,7 +204,7 @@ où $ T_{n-p-1} $ est la distribution de Student avec $n-p-1$ degrées de libert
 
 **L'histogramme des résidus** semble être **gaussien**. L'hypothèse des bruits gaussiens permet d'utiliser la **statistique de Student non asymptotiquement**.
 
-### 5. Tester l'hypothèse de non significativité de nwifeinc avec un seuil de significativité de 1%, 5% et 10% (test alternatif des deux côtés)
+### Tester l'hypothèse de non significativité de nwifeinc avec un seuil de significativité de 1%, 5% et 10% (test alternatif des deux côtés)
 
 
 
@@ -258,7 +256,7 @@ display_html(pd.DataFrame({"t-stat": t_stat, "p-value": p_value}, index=["result
 > La **p-valeur** du test de student est **0.143**. Cela signifie que $ P(\theta_{nwifeinc} = 0 | \hat{\theta}_{nwifeinc} = 0.0049) = {\bf 0.143} $. Ainsi, les hypothèses aux seuils
 > **1%**, **5%**, **10%** ne peuvent donc **pas être rejettées**. 
 
-### 6. Tester l’hypothèse que le coefficient associé à nwifeinc est égal à 0.01 avec un seuil de significativité de 5% (test à alternatif des deux côtés)
+### Tester l’hypothèse que le coefficient associé à nwifeinc est égal à 0.01 avec un seuil de significativité de 5% (test à alternatif des deux côtés)
 
 * On reprend le test de Student de la quesiton précédente sauf que le test ici est:
 
@@ -286,7 +284,7 @@ display_html(pd.DataFrame({"t-stat": np.abs(t_stat), "p-value": p_value}, index=
 
 * La **p-value** du test est de **0.125**, le test de significativité à 5% n'est donc **pas rejetté**.
 
-### 7. Tester l’hypothèse jointe que le coefficient de nwifeinc est égal à 0.01 et que celui de city est égal à 0.05
+### Tester l’hypothèse jointe que le coefficient de nwifeinc est égal à 0.01 et que celui de city est égal à 0.05
 
 Le modèle initial est: 
 
@@ -362,7 +360,7 @@ display_html(pd.DataFrame({"f-stat": f_stat, "p-value": p_value}, index=["result
 
 
 
-### 8. Tester l’hypothèse jointe que $\bf \{ \beta_{nwifeinc} + \beta_{city} =0.1 \}$ **et** $\bf \{ \beta_{educ}  + \beta_{exper} =0.1 \} $
+### Tester l’hypothèse jointe que $\{ \beta_{nwifeinc} + \beta_{city} =0.1 \}$ **et** $\bf \{ \beta_{educ}  + \beta_{exper} =0.1 \} $
 
 Les deux conditions du modèle restreint sont:
 
@@ -426,11 +424,11 @@ display_html(pd.DataFrame({"f-stat": f_stat, "p-value": p_value}, index=["result
 | ------: | -----: | ------: |
 | results |  0.923 |   0.398 |
 
-La **p-valeur** du test est  $\bf 0.398$, l'hypothèse $$H_0 : \big\{ \bf \{ \beta_{nwifeinc} + \beta_{city} =0.1 \}$ **et** $\bf \{ \beta_{educ}  + \beta_{exper} =0.1 \} \big\}$$ est donc **acceptée**.
+La **p-valeur** du test est  $\bf 0.398$, l'hypothèse $H_0 : \big\{ \bf \{ \beta_{nwifeinc} + \beta_{city} =0.1 \}$ et $\bf \{ \beta_{educ}  + \beta_{exper} =0.1 \} \big\}$ est donc **acceptée**.
 
 
 
-### 9. Faites une représentation graphique de la manière dont le salaire augmente avec l’éducation et l’expérience professionnelle
+### Faites une représentation graphique de la manière dont le salaire augmente avec l’éducation et l’expérience professionnelle
 
 * Le graphique proposé trace le salaire en fonction de l'expérience pour **deux niveaux d'éducation**, inférieur et au dessus de la médiane (**12 années**).
 
@@ -452,7 +450,7 @@ axes[1].set_title("Evolution du salaire en fonction du niveau d'éducation et de
 plt.show()
 ```
 
-<img src='/assets/posts/Econometrie/Heteroscedasticite/output_47_0.png' class='image fit'>
+<img src='/assets/posts/Econometrie/heteroscedasticite/output_47_0.png' class='image fit'>
 
 On voit que le **niveau d'éducation** à une **forte influence** sur le salaire en **début** et **fin de carrière**. Autour de **10 ans** d'expérience, l'éducation a **moins d'influence**. 
 
@@ -462,7 +460,7 @@ Globalement, pour des **niveaux d'éducation supérieurs à 12 années**, le **s
 
 
 
-### 10. Faire le test d'hétéroscédasticité de forme linéaire en donnant la p-valeur. Déterminer la ou les sources d’hétéroscédasticité.
+### Faire le test d'hétéroscédasticité de forme linéaire en donnant la p-valeur. Déterminer la ou les sources d’hétéroscédasticité.
 
 [Index](#i)
 
@@ -487,7 +485,7 @@ for i in range(axes.shape[0]):
 plt.show()
 ```
 
-<img src='/assets/posts/Econometrie/Heteroscedasticite/output_55_0.png' class='image fit'>
+<img src='/assets/posts/Econometrie/heteroscedasticite/output_55_0.png' class='image fit'>
 
 
 * Il semble difficile d'évaluer les sources d'hétéroscédasticité de façon qualitative ici, nous allons appliquer le test de Fisher sur la nullité des coefficient de la regression des variables explicatives sur la norme euclidienne des résidus: 
@@ -556,7 +554,7 @@ display_html(OLS_summary(results_heter))
 
 > Retraçons les moyennes mobiles des résidus sur une fenètre de 5 années en fonction de l'expérience:
 
-<img src='/assets/posts/Econometrie/Heteroscedasticite/output_60_0.png' class='image centered'>
+<img src='/assets/posts/Econometrie/heteroscedasticite/output_60_0.png' class='image centered'>
 
 
 > On remarque en effet une légère **tendance baissière** des **de la variance des résidus** en **fonction de l'expérience**.
@@ -605,7 +603,7 @@ ax2.set_title('residual vs exper WLS')
 plt.show()
 ```
 
-<img src='/assets/posts/Econometrie/Heteroscedasticite/output_66_0.png' class='image fit'>
+<img src='/assets/posts/Econometrie/heteroscedasticite/output_66_0.png' class='image fit'>
 
 
 > On voit que l'hétéroscédasticité du modèle a été améliorée. 
@@ -710,7 +708,7 @@ WLS regression
 
 * La faible hétéroscédasaticité du modèle à été corrigée par l'application de la régression **WLS**. Les covariances des estimateurs ont baissées et la **p-valeur** de la statistique de Fisher pour le **test d'hétéroscédasticité à augmenté significativement** rendant l'hypothèse d'homoscédasticité du modèle WLS **plus probable**.
 
-### 11. Tester le changement de structure de la question 8 entre les femmes qui ont plus de 43 ans et les autres : test sur l'ensemble des coefficients
+### Tester le changement de structure de la question 8 entre les femmes qui ont plus de 43 ans et les autres : test sur l'ensemble des coefficients
 
 
 
@@ -792,7 +790,7 @@ display_html(pd.DataFrame({"f-stat": f_stat, "p-value": p_value}, index=["result
 
 * La p-valeur du test de Chow est **0.566**, on en peut donc **pas rejéter** l'hypothèse nulle. Il n'y a donc **pas de changement de structure** entre les deux groupes d'individus considérés.
 
-### 12. Ajouter au modèle de la question 7 la variable huseduc. Faire ensuite la même régression en décomposant la variable huseduc en 4 variables binaires construites selon votre choix
+### Ajouter au modèle de la question 7 la variable huseduc. Faire ensuite la même régression en décomposant la variable huseduc en 4 variables binaires construites selon votre choix
 
 
 

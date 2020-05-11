@@ -21,7 +21,7 @@ Le **critère** de performance à **optimiser** est l'aire sous la courbe ROC (*
 
 * Interprétation de L'AUC:
 
-> L'**AUC** correspond à la **proabilité** d'affecter un **score plus élevé** à un échantillon **positif par rapport à un négatif** en ayant tiré **aléatoirement** les deux échantillons **dans chacune des classes**.
+> L'**AUC** correspond à la **probabilité** d'affecter un **score plus élevé** à un échantillon **positif par rapport à un négatif** en ayant tiré **aléatoirement** les deux échantillons **dans chacune des classes**.
 
 <a id='index'><a/>
 
@@ -95,7 +95,7 @@ Dans un premier temps, nous pouvons nous intéresser au caractéristiques statis
 <img src='/assets/posts/AD/output_24_1.png' class='image fit'>
 
 
-> On remarque que la distribution de la moyenne est plus étendue pour le jeu d'entrainement que pour le jeu de test, signifiant potentiellement que des observations anormales du jeu de test pourraient être détectés en utilisant la moyenne des observations.
+> On remarque que la distribution de la moyenne est plus étendue pour le jeu d'entrainement que pour le jeu de test, signifiant potentiellement que des observations anormales du jeu de test pourraient être détectées en utilisant la moyenne des observations.
 
 ### Description statistique de données en normalisant toutes les courbes 
 

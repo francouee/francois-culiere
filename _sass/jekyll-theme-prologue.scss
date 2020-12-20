@@ -153,13 +153,16 @@
 
 	/* Table of content */
 
-	ul li a  {
-		color: #333;
+	.toc {
+		ul li a  {
+			color: #333;
+		}
+		ul li ul li a  {
+			color: #4863A0;
+		}
 	}
 
-	ul li ul li a  {
-		color: #4863A0;
-	}
+	
 
 	sub {
 		position: relative;

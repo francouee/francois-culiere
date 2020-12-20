@@ -27,7 +27,7 @@ Le **critère** de performance à **optimiser** est l'aire sous la courbe ROC (*
 
 # Table des matière
 
-<ul style="font-size:140%; weight: 600; list-style-type: none; padding: 20px;">
+<ul class="toc" style="font-size:140%; weight: 600; list-style-type: none; padding: 20px;">
     <li style="padding: 20px 30px 20px"><a href="#Introduction">Introduction</a>
     </li>
     <li><a href="#1" >1. Exploraition des données</a>

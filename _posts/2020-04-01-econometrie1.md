@@ -143,14 +143,13 @@ $$
 \end{align}
 $$
 
-En rappelant que $ E_{x, y}[f(x, y)] = E_xE_{y}[f(x, y) | x] $ et qu'un estimateur $$\hat{m}$$ est sans biais ssi $$E_{x, y}[\hat{m}(x, y)] = 0$$:
-$$
-\begin{align*}
-E_{x, y}[\hat{\theta}(y, x) | x)] &= \theta^* + (X^tX)^{-1} X^t E[\epsilon | x] \\
+En rappelant que $$E_{x, y}[f(x, y)] = E_xE_y[f(x, y) \mid x]$$ et qu'un estimateur $$\hat{m}$$ est sans biais ssi $$E_{x, y}[\hat{m}(x, y)]=0$$
+
+$$ \begin{align*}
+E_{x, y}[\hat{\theta}(y, x) \mid x)] &= \theta^* + (X^tX)^{-1} X^t E[\epsilon \mid x]\\
                            &= 0 \ \text{si} \ E[\epsilon | x]=0
 \end{align*}
 $$
-
 
 Le **biais de variable omise** survient lorsqu'une des **variables explicatives corrélée** à la fois avec la **variable expliquée** et avec le **terme d'erreur** n'est **pas prise en compte** dans l'équation. Dans ce cas, l'**hypothèse fondamentale** garantissant que les estimateurs MCO sont non biaisé n'est **plus valide**. 
 
@@ -247,13 +246,13 @@ display_html(pd.DataFrame({"t-stat": t_stat, "p-value": p_value}, index=["result
 
 <figure>
   <center>
-  <img src="/assets/posts/Econometrie/Heteroscedasticite/t_distribution_test.png" alt="Visualisation de la statistique de Student associée à la nullité du coefficient de nwifeinc">
+  <img src="/assets/posts/Econometrie/heteroscedasticite/t_distribution_test.svg" alt="Visualisation de la statistique de Student associée à la nullité du coefficient de nwifeinc">
   <figcaption><center>Visualisation de la statistique de Student associé de nullité du coefficient de nwifeinc</center></figcaption>
   </center>
 </figure>
 
 
-> La **p-valeur** du test de student est **0.143**. Cela signifie que $ P(\theta_{nwifeinc} = 0 | \hat{\theta}_{nwifeinc} = 0.0049) = {\bf 0.143} $. Ainsi, les hypothèses aux seuils
+> La **p-valeur** du test de student est **0.143**. Cela signifie que la probabilité d'obtenir un coefficient au moins aussi grand que celui obtenu sous l'hypothèse nulle est **0.143**, i.e $ P(\theta_{nwifeinc} = 0 \mid | \hat{\theta}_{nwifeinc} | > 0.0049) = {\bf 0.143} $. Ainsi, les hypothèses aux seuils
 > **1%**, **5%**, **10%** ne peuvent donc **pas être rejettées**. 
 
 ### Tester l’hypothèse que le coefficient associé à nwifeinc est égal à 0.01 avec un seuil de significativité de 5% (test à alternatif des deux côtés)
@@ -424,7 +423,7 @@ display_html(pd.DataFrame({"f-stat": f_stat, "p-value": p_value}, index=["result
 | ------: | -----: | ------: |
 | results |  0.923 |   0.398 |
 
-La **p-valeur** du test est  $\bf 0.398$, l'hypothèse $H_0 : \big\{ \bf \{ \beta_{nwifeinc} + \beta_{city} =0.1 \}$ et $\bf \{ \beta_{educ}  + \beta_{exper} =0.1 \} \big\}$ est donc **acceptée**.
+La **p-valeur** du test est  $\bf 0.398$, l'hypothèse $$H_0 : \big\{ \bf \{ \beta_{nwifeinc} + \beta_{city} =0.1 \}$$ et $$\bf \{ \beta_{educ}  + \beta_{exper} =0.1 \} \big\}$$ est donc **acceptée**.
 
 
 

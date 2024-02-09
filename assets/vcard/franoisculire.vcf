@@ -1,0 +1,20 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Culière;François;;;
+FN:François Culière
+ORG:
+ADR;TYPE=WORK:
+TITLE:Data Scientist
+TEL;TYPE=CELL:+33622194112
+TEL;TYPE=WORK:
+TEL;TYPE=HOME:
+TEL;TYPE=MSG:
+EMAIL;TYPE=WORK:francois.culiere@gmail.com
+URL;TYPE=Digital Business Card:https://francoisculiere.com/vcard/bizcard-folder/
+URL;TYPE=Website:https://francoisculiere.com
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/francoiscl
+URL;TYPE=GitHub:https://www.github.com/francouee
+KEY;TYPE=PGP;ENCODING=b:
+NOTE:Ingénieur de formation, je me suis spécialisé en Machine Learning en faisant le mastère spécialisé Big Data de Télécom Paris après ma formation aux Arts & Métiers. Je suis actuellement Data Scientist Senior chez Quantmetry, cabinet de conseil spécialisé dans la data.
+UID:EnBizCard-100876692
+END:VCARD
